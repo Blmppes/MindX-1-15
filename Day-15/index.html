@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>blbala</title>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: black;
+        }
+        #bulb{
+            width: 300px;
+            height: 350px;
+        }
+        .button{
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+            border: none;
+            background-color: aqua;
+            border-radius: 5px;
+        }
+    </style>
+    <body id="body">
+        <div id="container">
+            <center>
+                <img id="bulb" src="bulboff.gif">
+                <button class="button" onclick="onbulb()"><h1>On</h1></button>
+                <button class="button" onclick="offbulb()"><h1>Off</h1></button>
+            </center>
+            <audio src="WaitingForLove-MartinGarrixAviciiJohnLegend-3852978.mp3" controls></audio>
+        </div>
+    </body>
+    <script>
+        function onbulb(){
+            var bulb = document.getElementById("bulb");
+            var body = document.getElementById("body");
+            bulb.src = "bulbon.gif";
+            body.style.backgroundColor = "white";
+        }
+        function offbulb(){
+            var bulb = document.getElementById("bulb");
+            var body = document.getElementById("body");
+            bulb.src = "bulboff.gif";
+            body.style.backgroundColor = "black";
+        }
+        setInterval(() =>{
+            onbulb();
+        },5000);
+        setInterval(() =>{
+            offbulb();
+        },10000)
+    </script>
+</html>
