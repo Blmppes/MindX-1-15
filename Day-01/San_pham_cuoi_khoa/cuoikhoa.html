@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aural Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: rgba(46,51,86);
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .topnav img{
+            width: 180px;
+            height: 100px;
+        }
+        .sidebar {
+            height: 670px;
+            width: 220px;
+            overflow-x: hidden;
+            margin-top:50px;
+        }
+        .sidebar a {
+            height: 78px;
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 35px;
+            color: #818181;
+            background-color: #333;
+            display: block;
+        }
+        .sidebar a:hover {
+            opacity: 0.8;
+        }
+/* Next & previous buttons */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: 50px 0px 0px 200px ;
+        }
+            /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 35%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+            /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+            /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        #footer{
+            width: 97%;
+            height: 100px;
+            background-color: #333;
+            padding: 20px;
+        }
+    </style>
+    </head>
+<body>
+    <div id="container">
+        <div class="topnav">
+            <img src="idea.png">
+            <h1 style="color: white;margin: 0px 260px 0px 340px;font-size:40px;">Aural Helper</h1>
+            <div id="button">
+                <a href="about.html">Chúng tôi</a>
+                <a class="active" href="cuoikhoa.html">Trang chủ</a>
+            </div>
+        </div>
+        <div id="article" style="display: flex;">
+            <div class="sidebar">
+                <a href="Cac_thoi_ky_am_nhac.html">Các thời kỳ âm nhạc</a>
+                <a href="Lớp 3.html">Lớp 3</a>
+                <a href="Lớp 4.html">Lớp 4</a>
+                <a href="Lớp 5.html">Lớp 5</a>
+                <a href="Lớp 6.html">Lớp 6</a>
+                <a href="Lớp 7.html">Lớp 7</a>
+                <a href="Lớp 8.html">Lớp 8</a>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="slide1.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="slide2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="slide3.jpg" style="width:100%">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+        <div id="footer" >
+            <h2 style="color:white;margin: 40px 0px 0px 500px;">Số điện thoại liên lạc: 09273182749</h2>
+        </div>
+    </div>
+</body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slides[slideIndex-1].style.display = "block";  
+    }
+</script>
+</html>
