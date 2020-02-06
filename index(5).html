@@ -1,0 +1,95 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Caculate BMI</title>
+        <style>
+            body{
+                font-family: sans-serif;
+                background-image: url('pizza.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            #input{
+                width: 350px;
+                height: 300px;
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 10px;
+                padding: 10px;
+                margin: 150px 0px 0px 200px;
+            }
+            #output{
+                width: 350px;
+                height: 420px;
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 10px;
+                padding: 10px;
+                margin: 150px 0px 0px 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" style="display: flex;">
+            <div id="input">
+                <h1 style="text-align: center;text-decoration: underline;">BMI</h1>
+                <h3>Nhập chiều cao :</h3>
+                <input type="text" id="chieu-cao-input" placeholder="Nhập theo cm, ví dụ 160cm" required style="width: 350px;height: 30px;">
+                <h3>Nhập cân nặng :</h3>
+                <input type="text" id="can-nang-input" placeholder="Nhập theo kg, ví dụ 70kg" required style="width: 350px;height: 30px;">
+                <input type="submit" style="margin: 10px 0px 0px 140px;width: 80px;height: 40px" onclick="getBMI()">
+            </div>
+            <div id="output">
+                <h1 style="text-align: center;text-decoration: underline;">Thông tin chỉ số</h1>
+                <label><h3>Chiều cao: </h3><h3 id="chieu-cao-output" style="color:
+                k">0 cm</h3></label>
+                <label><h3>Cân nặng: </h3><h3 id="can-nang-output" style="color:black">0 kg</h3></label>
+                <label><h3>BMI: </h3><h3 id="BMI" style="color:black">0</h3></label>
+                <label><h3>Tình trạng hiện tại: </h3><h3 id="tinh-trang">Chưa rõ</h3 ></label>
+                <h4><strong>Note:</strong><h4></h4></h4>
+            </div>
+        </div>
+    </body>
+    <script>
+        var chieuCaoInput = document.querySelector("#chieu-cao-input");
+        var canNangInput = document.querySelector("#can-nang-input");
+        var chieuCaoOutput = document.querySelector("#chieu-cao-output");
+        var canNangOutput = document.querySelector("#can-nang-output");
+        var BMI = document.querySelector("#BMI");
+        var tinhTrang = document.querySelector("#tinh-trang");
+        function getBMI(){
+            console.log(chieuCaoInput.value,canNangInput.value)
+            if(1 == 1){
+                chieuCaoOutput.textContent = String(chieuCaoInput.value) + 'cm';
+                canNangOutput.textContent = String(canNangInput.value) + 'kg';
+                
+                BMI.textContent = Math.round(Number(canNangInput.value)/(Number(chieuCaoInput.value)/100*Number(chieuCaoInput.value)/100));
+                console.log(BMI.textContent)
+                if(BMI.textContent < '18.5'){
+                    tinhTrang.textContent = 'thiếu cân';
+                }else if(BMI.textContent >= '18.5' && BMI.textContent <= '25'){
+                    tinhTrang.textContent = 'bình thường';
+                }
+                else if(BMI.textContent > '25' && BMI.textContent <= '30'){
+                    tinhTrang.textContent = 'thừa cân';
+                }
+                else if(BMI.textContent > '30'){
+                    tinhTrang.textContent = 'béo phì';
+                }
+            }else{
+                alert("Cân nặng và chiều cao không hợp lí!")
+            }
+        }
+    </script>
+</html>
+<!--
+    Công thức tính BMI:
+    Cân nặng / (chiều cao^2)
+    Tình trạng:
+    < 18,5 -> thiếu cân
+    18,5 -> 25 -> B thường
+    25 -> 30 -> Thừa cân
+    > 30 -> Béo phì
+-->

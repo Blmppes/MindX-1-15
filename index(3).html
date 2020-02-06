@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+    </body>
+    <script>
+        var matsau = document.querySelector('#matsau');
+        var info = document.querySelector('#myh1')
+        const check = () => {
+            matsau.style.display = 'block';
+            matsau.style.opacity = '0.8';
+            info.style.color = 'coral';
+            info.style.transition = 'color 0.2s';
+            function change(){
+                info.innerHTML = 'Info';
+                info.style.color = 'black';
+            }
+            setTimeout(change, 250);
+        } 
+        const checkagain = () => {
+            matsau.style.display = 'none';
+            info.style.color = 'coral';
+            info.style.transition = 'color 0.2s';
+            function change(){
+                info.innerHTML = 'M10';
+                info.style.color = 'black';
+            }
+            setTimeout(change, 250);
+        }  
+    </script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Art galerry</title>
+        <style>
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+            .img{
+                width: 500px;
+                height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" style="text-align: center">
+            <img src='img1.png' class = 'img' alt='lỗi'>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onmouseover="change('dot1')"></span> 
+            <span class="dot" onmouseover="change('dot2')"></span> 
+            <span class="dot" onmouseover="change('dot3')"></span> 
+            <span class="dot" onmouseover="change('dot4')"></span>
+            <span class="dot" onmouseover="change('dot5')"></span>
+        </div>
+        <script>
+            const img = document.querySelector('.img');
+            const change = (dot) => {
+               if(dot == 'dot1'){
+                    img.src = 'img1.png';
+                    img.style.width = '500px';
+                    img.style.height = '400px';
+               }else if(dot == 'dot2'){
+                    img.src = 'img2.jpg';
+                    img.style.width = '500px';
+                    img.style.height = '400px';
+               }else if(dot == 'dot3'){
+                    img.src = 'img3.jpg';
+                    img.style.width = '500px';
+                    img.style.height = '400px';
+               }else if(dot == 'dot4'){
+                    img.src = 'img4.jpg';
+                    img.style.width = '500px';
+                    img.style.height = '400px';
+               }else if(dot == 'dot5'){
+                    img.src = 'img5.jpg';
+                    img.style.width = '500px';
+                    img.style.height = '400px';
+               }
+            }
+        </script>
+    </body>
+</html> 

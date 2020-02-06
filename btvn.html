@@ -1,0 +1,139 @@
+<!--
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <title>Document</title>
+        <style>
+            #container{
+                width: 400px;
+                height: 500px;
+                background-color: black;
+                border-radius: 20px;
+                position: relative;
+                left: 460px;
+                top: 70px;
+                opacity: 0.8;
+            }
+            .input{
+                position: absolute;
+                top: 120px;
+                left: 65px;
+                height: 35px;
+                width: 280px;
+                border: none;
+            }
+            #pass{
+                top: 160px;
+            }
+            #lower_part{
+                display: flex;
+                color: white;
+                position: absolute;
+                top: 250px;
+            }
+            .check{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid white;
+                background-color: black;
+                color: white;
+                position: absolute;
+                left: 35%;
+                top: 350px;
+            }
+            #ok1{
+                left: 50%;
+                border-radius: 5px;
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body style="font-family: sans-serif;background:url('Anh nen.jpg') no-repeat;background-size:cover">
+        <div id="container">
+            <h1 style="color:white;text-align: center;">LOGIN NOW</h1>
+            <input type='text' id='user' placeholder="Email" class="input"><br>
+            <input type='password' id='pass' placeholder="Password" class="input"><br>
+            <div id="lower_part">
+                <label style="font-size: 18px;position: absolute;top: 15px;left: 10px">
+                    <input type='checkbox' id="checkbox" style="width: 20px;height: 20px;" checked="checked">
+                    Remember me
+                </label>
+                <a href="#" style="margin-left: 240px;color:white;" onclick="givepass()"><h4>Forgot password ?</h4></a>
+            </div>
+            <button id="ok" onclick="submit()" class="check">-></button>
+            <button id="ok1" onclick="register()" class="check">Register</button>
+        </div>
+    </body>
+    <script>
+        var user = document.querySelector("#user");
+        var pass = document.querySelector("#pass");
+        var localuser = ["Khiem@gmail.com","Phong@gmail.com","Hieu@gmail.com","Minh@gmail.com","Khoa@gmail.com","Loc@gmail.com"];
+        var localpass = ["123","1234","12345","123456","1234567","12345678"];
+        function submit(){
+            var check = 0;
+            if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.value) && pass.value.length >= 6){
+                for(i = 0;i < localuser.length;i++){
+                if(user.value == localuser[i] && pass.value == localpass[i]){
+                    alert("Welcome lady or gentleman");
+                    check += 1;
+                    break;
+                }
+                }
+                if(check == 0){
+                    alert("Email or password is wrong");
+                }
+            }else{
+                alert("Email or password is invalid");
+                console.log(user.value,pass.value.length);
+            }
+        }
+        function register(){
+            var a = prompt("Email:");
+            var b = prompt("Password:");
+            if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(a) && b.length >= 6){
+                localuser.push(a);
+                localpass.push(b);
+            }else{
+                alert("Email or password is invalid");
+            }
+        }
+        function givepass(){
+            userforgot = prompt("Enter your gmail:");
+            passforgot = "";
+            for(i = 0;i < localuser.length;i++){
+                if(userforgot == localuser[i]){
+                    passforgot = localpass[i];
+                    break;
+                }
+            }
+            alert(`Your password is ${passforgot}`);
+        }
+    </script>
+</html>
+-->
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Football</title>
+        <style>
+            p{
+                width: 400px;
+                height: 200px;
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='container'>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My house</title>
+    <style>
+        #body{
+            position: absolute;
+            top: 80px;
+            left: 30px;
+            width: 500px;
+            height: 400px;
+            background-color: #f7bcbc;
+            border: 2px solid black;
+        }
+        #roof{
+            position: absolute;
+            top: 0px;
+            left: -10px;
+            border-bottom: 80px solid #555;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            height: 0px;
+            width: 540px;
+        }
+        .window{
+            position: absolute;
+            left: 60px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f7bcbc;
+            border: 2px solid red;
+        }
+        #door{
+            position: absolute;
+            bottom: 0px;
+            left: 200px;
+            width: 150px;
+            height: 280px;
+            background-color: lightblue;
+        }
+        #taynamcua{
+            position: absolute;
+            top: 45%;
+            right: 3%;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        #sun{
+            position: relative;
+            top: -530px;
+            right: -1290px;
+            width: 100px;
+            height: 100px;
+            background-color: #f5f112;
+            border-radius: 50%;;
+        }
+        #tree{
+            position: relative;
+            top: -570px;
+            right: -750px;
+            width: 500px;
+            height: 650px;
+        }
+    </style>
+</head>
+<body style="margin: 0;padding: 0">
+    <div id="container" style="width: 100%;height: 100%;overflow: hidden;">
+        <div id="house" style="position: relative;width: 540px;height:480px;top: 150px;left: 20px">
+            <div id="body"></div>
+            <div id="roof"></div>
+            <div class="window"></div>
+            <div class="window" style="left: 390px"></div>
+            <div id="door">
+                <div id="taynamcua"></div>
+            </div>
+        </div>
+        <div id="sun"></div>
+        <img src="screen-6.jpg" id="tree">
+    </div>
+</body>
+</html>
